@@ -12,18 +12,19 @@
 <body>
   <h1>Tic Tac Toe</h1>
   <h3>Select icon to start playing.</h3>
+  <div class="announce"></div>
 
-<div id="player-button">
-  <button type="submit" id="x"></button>
-  <button type="submit" id="o"></button>
-  </div>
+
+  <button type="submit" class ="player-button" id="x"></button>
+  <button type="submit"  class ="player-button" id="o"></button>
+  
 
 
   <div class= "first-player">
   <span id="player1-score">Player 1's score:</span>
   </div>
 
-  <div id= "second-player">
+  <div class= "second-player">
   <span id="player2-score">Player 2's score:</span>
   </div>
 
@@ -32,20 +33,20 @@
   </div>
 
 <div id="board">
-  <div class="cell" id="0"></div>
-  <div class="cell" id="1" ></div>
-  <div class="cell" id="2"></div>
-  <div class="cell" id="3"></div>
-  <div class="cell" id="4"></div>
-  <div class="cell" id="5"></div>
-  <div class="cell" id="6"></div>
-  <div class="cell" id="7"></div>
-  <div class="cell" id="8"></div>
+  <div class="cell" data-cell></div>
+  <div class="cell" data-cell ></div>
+  <div class="cell" data-cell></div>
+  <div class="cell" data-cell></div>
+  <div class="cell" data-cell></div>
+  <div class="cell" data-cell></div>
+  <div class="cell" data-cell></div>
+  <div class="cell" data-cell></div>
+  <div class="cell" data-cell></div>
 </div>
 
 
 
-<div class="announce"></div>
+
 
 </body>
 </html>

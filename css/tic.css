@@ -60,17 +60,21 @@ button {
             opacity: 50%;
         }
 
-         #x:hover {
+         #x {
             background-image: url(
 'img/icons8-leaf-100.png');
             background-size: cover;
-            opacity: 100%;
+
         }
-        #o:hover {
+        #o {
            background-image: url(
 'img/icons8-flower-doodle-100.png');
            background-size: cover;
-           opacity: 100%;
+
+       }
+
+       #x:hover, #o:hover {
+         opacity: 100%;
        }
 
   #first-player #second-player {

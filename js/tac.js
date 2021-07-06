@@ -1,89 +1,95 @@
-//sshow who won or if tied
-//log score
-//restart the game
-// track clicks
-// update game state
-// validate win/with
-// stop the game or change active player
-// reflec the update made on UI
-// repeat
+// console.log('wow')
+
 $(document).ready(function (){
 
-const displayMessage = $('announce');
-let gameStatus = true;
+  //***** Declaring all variables here *******//
+let board = [ '','','','','','','','',''];
 
-let board  = ['','','','','','','','',''];
+let currentplayer = 0;
+let cellMark = 0;
+let playerXScore = 0;
+let playerOscore= 0;
+const playerX = $('#x');
+const playerO = $('#o');
+const leaf = $('<img>').attr('src', 'css/img/icons8-leaf-100.png');
+const sakura = $('<img>').attr('src', 'css/img/icons8-flower-doodle-100.png');
+const winningCombinations = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6]
+];
 
-let currentPlayer = "X";
-let player2 = "O";
+
+//********* Choose Player **********//
 
 
-const cellPlayed  = function (clickedCell, clickedCellIndex) {
-board[clickedCellIndex] = currentPlayer;
-clickedCell.html(currentPlayer);
+$('#x, #o').on('click', function (){
+  if (this.id === 'x') {
+    playerX.css( 'opacity', '1');
+    playerO.css( 'opacity', '0.5');
+    $('.player-button').addClass('playerClick');
+     currentPlayer = 1;
+    $('.cell').addClass('playLeaf');
+  } else if (this.id=== 'o') {
+    playerO.css( 'opacity', '1');
+    playerX.css( 'opacity', '0.5');
+    $('.player-button').addClass('playerClick');
+     currentPlayer = 2;
+     $('.cell').removeClass('playLeaf');
+  }
+});
+
+//Mark each cell with image
+$('.cell').on('click', function (){
+if (!$('.player-button').hasClass('playerClick')){
+  alert("Please select an icon before you play.");
+}else if ($('.cell').hasClass('gameOver')) {
+  $('.announce').html("Press restart to start over");
+
+} else if ($('.cell').html()!== ''){}
+else if ($(this).hasClass('playLeaf')){
+  $(this).html(leaf);
+  $('.cell').removeClass('playLeaf');
+  playerO.css( 'opacity', '1');
+  playerX.css( 'opacity', '0.5');
+  cellMark = cellMark + 1;
+} else{
+  $(this).html(sakura);
+  $('.cell').addClass('playLeaf');
+
+  playerX.css( 'opacity', '1');
+  playerO.css( 'opacity', '0.5');
+
+  cellMark = cellMark + 1;
+}
+});
+
+
+// ******** GAME TIME - MAIN FUNCTION ********* //
+
+const checkWin = function(){
+  //some combinations
+  //log score
+  //if draw try again
 }
 
-const playerChange =  function() {
-currentPlayer = currentPlayer === "X" ? "O" :"X";
-displayMessage.html("It's " + currentPlayer +"'s turn");
-};
+//restart game
 
-const winningConditions = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
+$('#restart').click(function (){
+  location.reload();
+});
 
-];
-const resultValidate = function () {
-    let gameWon = false; //start off false
-    for (let i=0; i<=7; i++) {
-      const wins = winningConditions[i];
-      let firstScen = board[wins[0]];
-      let secondScen = board[wins[1]];
-      let thirdScen = board[wins[2]];
-      if (firstScen === '' || secondScen === '' || thirdScen === '') {
-      continue;
-      }
-      if(firstScen === secondScen && secondScen === thirdScen) {
-        gameWon = true;
-        break;
-      };
-    };
 
-    if(gameWon) {
-      displayMessage.html(currentPlayer + " has won!")
-      gameStatus = false;
-      return
-    }
-  // log score
-};
 
-const cellClick = function (e) {
-//check if cell has been clicked
-const clickedCell = e.target;
-const clickedCellIndex  = Number($('cell'));
-if (board[clickedCellIndex] !== '' || !gameStatus){
-  return;
-};
-cellPlayed(cellClick, clickedCellIndex);
-resultValidate();
-};
 
-const restartGame = function () {
-gameStatus = true;
-currentPlayer = $('#player-1');
-board = ['','','','','','','','',''];
-displayMessage.html("It's " + currentPlayer + "'s turn.")
-$('cell').forEach(cell => cell.html(""));
-};
 
-// event listeners there
-$('.cell').on('click',cellClick);
 
-$('#restart').on('click',restartGame);
+
+
+
 });
