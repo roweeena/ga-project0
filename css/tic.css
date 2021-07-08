@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 body {
-  background-color: peachpuff;
   background: url('img/d2519f97a780645b9b5335c3460ce25a.gif') no-repeat center fixed;
   background-size: cover ;
   background-repeat: no-repeat;
@@ -18,14 +17,13 @@ h1 h3 {
 
 :root {
   --cell-size: 170px;
-  /* --grid-gap: 7px; */
 }
 #board {
   display: grid;
   grid-template-columns: repeat( 3, minmax( 90px, 1fr ));
   grid-template-rows: repeat( 3, minmax( 90px, 1fr ));
-  /* grid-gap: var( --grid-gap );
-  width: 100%; */
+  grid-gap: var( --grid-gap );
+  width: 100%;
   height: 100%;
   max-width: 495px;
   margin: 0 auto;
@@ -52,53 +50,55 @@ h1 h3 {
   opacity: 100%;
 }
 
+.first-player, .second-player {
+  display:inline-block;
+}
+
 input[type="button"] {
   font-family: 'Yomogi', cursive;
   background-color: #ffb7c5;
-
 }
 
 button {
-            width: 70px;
-            height: 70px;
-            border: 0;
-            cursor: pointer;
-            font-size: 2rem;
-            background-color: #ffb7c5;
-            opacity: 50%;
-        }
+  width: 70px;
+  height: 70px;
+  border: 0;
+  cursor: pointer;
+  font-size: 2rem;
+  background-color: #ffb7c5;
+  opacity: 50%;
+}
 
-         #x {
-            background-image: url(
+#x {
+  background-image: url(
 'img/icons8-leaf-100.png');
-            background-size: cover;
+  background-size: cover;
+}
 
-        }
-        #o {
-           background-image: url(
+#o {
+  background-image: url(
 'img/icons8-flower-doodle-100.png');
-           background-size: cover;
+  background-size: cover;
+}
 
-       }
+.leaf {
+  background-image: url(
+'img/icons8-leaf-100.png');
+ background-size:70%;
+ background-repeat:no-repeat;
+  background-position: center center;
 
-       #x:hover, #o:hover {
-         opacity: 100%;
-       }
+}
 
-      #first-player, #second-player {
-        display: inline-block;
-        position: absolute;
-      }
+.flower{
+  background-image: url(
+'img/icons8-flower-doodle-100.png');
+ background-size:70%;
+ background-repeat:no-repeat;
+  background-position: center center;
 
+}
 
-      .o, .x {
-        color: black;
-        font-family: 'Permanent Marker', cursive;
-        font-size: 100px;
-        vertical-align: 80px;
-
-      }
-
-
-
-.
+#x:hover, #o:hover {
+  opacity: 100%;
+}
