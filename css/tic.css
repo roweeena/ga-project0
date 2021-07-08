@@ -1,104 +1,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 body {
-  background: url('img/d2519f97a780645b9b5335c3460ce25a.gif') no-repeat center fixed;
-  background-size: cover ;
-  background-repeat: no-repeat;
-  box-sizing: border-box;
- text-align: center;
- font-family: 'Yomogi', cursive;
- color:white;
- text-shadow:1px 1px 2px #000;
+	background: url('img/d2519f97a780645b9b5335c3460ce25a.gif') no-repeat center fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	text-align: center;
+	font-family: 'Yomogi', cursive;
+	color: white;
+	text-shadow: 1px 1px 2px #000;
 }
 
 h1 h3 {
-  margin: 4px;
+	margin: 4px;
 }
 
 :root {
-  --cell-size: 170px;
+	--cell-size: 170px;
 }
+
 #board {
-  display: grid;
-  grid-template-columns: repeat( 3, minmax( 90px, 1fr ));
-  grid-template-rows: repeat( 3, minmax( 90px, 1fr ));
-  grid-gap: var( --grid-gap );
-  width: 100%;
-  height: 100%;
-  max-width: 495px;
-  margin: 0 auto;
-  background-size: contain;
-        opacity: 75%;
+	display: grid;
+	grid-template-columns: repeat( 3, minmax( 90px, 1fr));
+	grid-template-rows: repeat( 3, minmax( 90px, 1fr));
+	grid-gap: var( --grid-gap);
+	width: 100%;
+	height: 100%;
+	max-width: 495px;
+	margin: 0 auto;
+	background-size: contain;
+	opacity: 75%;
 }
 
 .cell {
-  color: black;
-  font-family: 'Permanent Marker', cursive;
-  font-size: 100px;
-  vertical-align: 80px;
-  cursor: pointer;
-  position: relative;
-  background-color: white;
-  width: var( --cell-size );
-  height: var( --cell-size );
-  opacity: 0.5;
-  transition: opacity 0.2s ease-in-out;
- background-size: contain;
+	font-size: 100px;
+	vertical-align: 80px;
+	cursor: pointer;
+	position: relative;
+	background-color: white;
+	width: var( --cell-size);
+	height: var( --cell-size);
+	opacity: 0.5;
+	transition: opacity 0.2s ease-in-out;
+	background-size: contain;
 }
 
 .cell:hover {
-  opacity: 100%;
+	opacity: 100%;
 }
 
-.first-player, .second-player {
-  display:inline-block;
+.first-player,
+.second-player {
+	display: inline-block;
 }
 
 input[type="button"] {
-  font-family: 'Yomogi', cursive;
-  background-color: #ffb7c5;
+	font-family: 'Yomogi', cursive;
+	background-color: #ffb7c5;
 }
 
 button {
-  width: 70px;
-  height: 70px;
-  border: 0;
-  cursor: pointer;
-  font-size: 2rem;
-  background-color: #ffb7c5;
-  opacity: 50%;
+	width: 70px;
+	height: 70px;
+	border: 0;
+	cursor: pointer;
+	font-size: 2rem;
+	background-color: #ffb7c5;
+	opacity: 50%;
 }
 
 #x {
-  background-image: url(
-'img/icons8-leaf-100.png');
-  background-size: cover;
+	background-image: url('img/icons8-leaf-100.png');
+	background-size: cover;
 }
 
 #o {
-  background-image: url(
-'img/icons8-flower-doodle-100.png');
-  background-size: cover;
+	background-image: url('img/icons8-flower-doodle-100.png');
+	background-size: cover;
 }
 
 .leaf {
-  background-image: url(
-'img/icons8-leaf-100.png');
- background-size:70%;
- background-repeat:no-repeat;
-  background-position: center center;
-
+	background-image: url('img/icons8-leaf-100.png');
+	background-size: 70%;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 
-.flower{
-  background-image: url(
-'img/icons8-flower-doodle-100.png');
- background-size:70%;
- background-repeat:no-repeat;
-  background-position: center center;
-
+.flower {
+	background-image: url('img/icons8-flower-doodle-100.png');
+	background-size: 70%;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 
-#x:hover, #o:hover {
-  opacity: 100%;
+#x:hover,
+#o:hover {
+	opacity: 100%;
 }

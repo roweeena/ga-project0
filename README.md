@@ -4,26 +4,33 @@ WOOOWWEEEEEE
 
 #### by Rowena Leung
 
-Objectives:
+Find the online version [here!](https://roweeena.github.io/ga-project0/)
 
-* ffaf
+### Objectives:
 
-Process:
+Making a functional two player game of Tic Tac Toe using HTML, CSS and Javascript/jQuery.
 
-Thank yous
+#### How to play:
 
->Quotes indicator
+- Select the leaf or flower icon to start the game.
+- Click on a cell on the board to finish your turn.
+- Alternate between player until a winner is declared or the game ends in a tie.
+- Your score will be recorded above the board
+- Hit restart to play gain.
 
-*italics*
-**bold**
+> "Super cute design though" - a friend.
 
+#### Images:
 
-Here is a [link](www.twitter.com)
+![Screenshot of empty board]
 
-Images
-![Bill Murray in a beanie](http://www.fillmurray.com/120/220)
+#### Inspirations:
+This [game](https://codepen.io/anniebombanie/pen/NWNEGXZ?editors=0010) by @anniebombanie became the springboard for my own Tic Tac Toe game.
 
-Inline code
-`yeahboy`
+#### Bugs and Improvements:
 
-The jQuery object lives in a variable called `$`.
+At time of writing, the game can only play one game properly. I hope to fix this as soon as possible and add some animations/an easter egg.
+
+#### Thank yous:
+
+Thank you to my wonderful teachers at GA for guiding me through my first project and also my best friend: **Google**.
