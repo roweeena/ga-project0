@@ -27,7 +27,7 @@ This [game](https://codepen.io/anniebombanie/pen/NWNEGXZ?editors=0010) by @annie
 
 #### Bugs and Improvements:
 
-At time of writing, the game can only play one game properly. I hope to fix this as soon as possible and add some animations/an easter egg.
+At time of writing, there are issues with the score logging automatically when the flower player wins. I'd like to add some animation as well.
 
 #### Thank yous:
 
