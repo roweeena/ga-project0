@@ -153,7 +153,15 @@ $(document).ready(function() {
             $('#board').off("click");
             $('.cell').addClass('gameOver');
         }
-    };
+
+        //easter  egg
+        if ($(".first-player").text().includes("🍃's score: 3")|| $(".second-player").text().includes("🌸's score: 3")) {
+          alert ("Congratulations, you've unlocked the secret! Type 'pikachu' see what happens.")
+        }
+
+
+      };
+
     // ******** RESTART GAME *********//
     $('#restart').click(function() {
         cellMark = 0;
