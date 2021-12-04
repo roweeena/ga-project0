@@ -1,29 +1,30 @@
+//***** Declaring all variables here *******//
+let player = 0;
+let cellMark = 0;
+let playerXScore = 0;
+let playerOScore = 0;
+const playerX = $('#x');
+const playerO = $('#o');
+
+
 $(document).ready(function() {
-
-    //***** Declaring all variables here *******//
-    let player = 0;
-    let cellMark = 0;
-    let playerXScore = 0;
-    let playerOScore = 0;
-    const playerX = $('#x');
-    const playerO = $('#o');
-    const x = $('<img>').attr('src', 'css/img/icons8-leaf-100.png');
-    const o = $('<img>').attr('src', 'css/img/icons8-flower-doodle-100.png');
-
     //********* Choose Player **********//
 
     $('#x, #o').on('click', function() {
         $('.player-button').addClass('playerClick');
+        console.log(this.id)
         if (this.id === 'x') { //if player id is "x", play as the leaf
             playerX.css('opacity', '1');
             playerO.css('opacity', '0.5');
             $('.cell').removeClass('playFlower');
             $('.cell').addClass('playLeaf');
+            console.log($('#0.cell'));
             player = 1;
         } else if (this.id === 'o') { // or if play as the flower
             playerO.css('opacity', '1');
             playerX.css('opacity', '0.5');
             $('.cell').addClass('playFlower');
+            console.log($('.cell'));
 
             player = 2;
         }
@@ -40,11 +41,15 @@ $(document).ready(function() {
                 alert("Please select an icon before you play.");
             } else if ($('.cell').hasClass('gameOver')) {
                 alert("Press restart to start over");
-            } else if ($(this).html() === x || $(this).html() === o) {} else if ($(this).hasClass('playLeaf')) {
+            } else if ($(this).html() === x || $(this).html() === o) {
+               console.log($(this))
+              return;
+            } else if ($(this).hasClass('playLeaf')) {
                 $(this).addClass('leaf'); //marking each clicked cell with the leaf class and appending the cell with the image
                 $('.cell').removeClass('playLeaf');
                 $('#board').on('click', function(event) {
                     $target = $(event.target);
+                    console.log($target);
                     $target.addClass('leaf');
                     $target.removeClass('flower');
                 });
@@ -69,7 +74,8 @@ $(document).ready(function() {
         //check X wins - rows
         if ($('.cell').hasClass('gameOver')) {
             alert("Press restart to start over"); //if game is over, alert to start over
-        } else if ($('#0.leaf,#1.leaf,#2.leaf').length === 3) {
+        }
+         if ($('#0.leaf,#1.leaf,#2.leaf').length === 3) {
             playerXScore = playerXScore + 1; //add up score
             $('.first-player').text("🍃's score: " + playerXScore); // log it to the div
             $(".announce").text("🍃 has won! Press restart to play again.");
@@ -105,7 +111,7 @@ $(document).ready(function() {
             $(".announce").text("🍃 has won! Press restart to play again.");
         }
         // check O wins
-        if ($('#0.flower,#1.flower,#2.flower').length === 3) {
+       else if ($('#0.flower,#1.flower,#2.flower').length === 3) {
             playerOScore = playerOScore + 1;
             $('.second-player').text("🌸's score: " + playerOScore);
             $(".announce").text("🌸 has won! Press restart to play again.");
