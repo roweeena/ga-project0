@@ -27,10 +27,9 @@ This [game](https://codepen.io/anniebombanie/pen/NWNEGXZ?editors=0010) by @annie
 
 And credit to this [collection of easter eggs](https://github.com/WeiChiaChang/easter-egg-collection) by Wei Chia Chang, which you can read through and type in the game at any point for cute images to appear.
 
-#### 🐜Bugs and Improvements:
+#### Wishful improvements:
 
-At time of writing, there are issues with the score logging automatically when the flower player wins. I'd like to add some animation as well.
-
+I'd like to add animations
 #### 🤗Thank yous:
 
 Thank you to my wonderful teachers at GA for guiding me through my first project and also my best friend: **Google**.
